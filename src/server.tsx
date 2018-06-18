@@ -41,6 +41,11 @@ server
             ? `<link rel="stylesheet" href="${assets.client.css}">`
             : ''
         }
+        <script>
+        window.__APOLLO_STATE__=${JSON.stringify(
+          serverClient.extract(),
+        ).replace(/</g, '\\u003c')};
+        </script>
 
         ${
           process.env.NODE_ENV === 'production'

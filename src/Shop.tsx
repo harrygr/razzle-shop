@@ -26,7 +26,6 @@ interface ProductsQuery {
 type Props = RouteComponentProps<{}> & DataProps<ProductsQuery, {}>;
 
 const Shop = (props: Props) => {
-  console.log(props);
   const location = props.location;
   const page = Option(qs.parse(location.search, { ignoreQueryPrefix: true }))
     .flatMap(query => Option<string>(query.page))

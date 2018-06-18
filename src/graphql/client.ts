@@ -13,6 +13,6 @@ export const serverClient = new ApolloClient({
 
 export const clientClient = new ApolloClient({
   link,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache().restore((window as any).__APOLLO_STATE__),
   ssrForceFetchDelay: 100,
 });
